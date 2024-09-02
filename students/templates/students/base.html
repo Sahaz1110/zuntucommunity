@@ -1,0 +1,74 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuntu Community School</title>
+    <link rel="stylesheet" href="{% students 'styles.css' %}">
+    <link rel="shortcut icon" href="{% students 'images/logo.png' %}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% students 'images/logo.png' %}" alt="School Logo">
+            <h1>Zuntu Community School</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'student_form' %}">Students</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Content will be injected here by other templates -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Zuntu Community School. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuntu Community School</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="School Logo">
+            <h1>Zuntu Community School</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'students' %}">Students</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Content will be injected here by other templates -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Zuntu Community School. All rights reserved.</p>
+    </footer>
+</body>
+</html>

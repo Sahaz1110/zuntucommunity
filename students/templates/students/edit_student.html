@@ -1,0 +1,16 @@
+<!-- students/templates/students/edit_student.html -->
+{% extends "students/base_generic.html" %}
+
+
+{% block content %}
+  <h2>Edit Student Information</h2>
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      
+      <button type="submit" name="save">Save Changes</button>
+      <button type="submit" name="delete" onclick="return confirm('Are you sure you want to delete this student?');">Delete Student</button>
+  </form>
+
+
+{% endblock %}

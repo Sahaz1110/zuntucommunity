@@ -1,0 +1,41 @@
+<html class="html">
+
+<header>
+    <style>
+        .html {
+            background-color: antiquewhite;
+            border: solid green 1em;
+        }
+    .header {
+        color: white;
+        font-family: verdana;
+        font-size: 90%;
+        background-color: green;
+        text-align: center;
+        background-image: url(logo.png);
+        background-repeat: no-repeat;
+        background-position: center 
+        100px;
+        background-attachment: fixed;
+      }
+      p {
+        color: rgb(20, 19, 19);
+        font-family: courier;
+        font-size: 100%;
+      }
+      </style>
+</header>
+
+<div class="header">  
+<h1>ZUNTU COMMUNITY NUSERY AND PRIMARY SCHOOL</h1>
+<h4>Motto: Education is the Best Legacy</h4>
+</div>
+<h2>Student Information Management System (SIMS)</h2>
+<h2>Add Student</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'student_list' %}">Back to List</a>
+</html>
