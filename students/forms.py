@@ -10,7 +10,7 @@ from .models import Student
 class StudentForm(forms.ModelForm):
     class Meta:
         model = Student
-        fields = ['image',
+        fields = [
             'first_name', 'last_name', 'date_of_birth', 'gender',
             'religion', 'state', 'local_government', 
             'nationality', 'address', 'phone_number', 
